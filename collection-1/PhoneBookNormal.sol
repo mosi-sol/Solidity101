@@ -37,7 +37,7 @@ contract PhoneBook {
     }
 
     // ----- read-only ----- //
-    function reviewMap(uint id) public view returns (Person memory _pe) {
+    function reviewMap(uint id) public view returns (Person memory) {
         return per[id];
     }
 
