@@ -37,24 +37,25 @@ contract PhoneBook {
     }
 
     // ----- read-only ----- //
-    function reviewMap(uint id) public view returns (Person memory) {
+    function viewFull(uint id) public view returns (Person memory) {
         return per[id];
     }
 
-    function reviewAdd(uint id) public view returns (address) {
+    function viewAddress(uint id) public view returns (address) {
         return per[id].contact;
     }
 
-    function reviewNum(uint id) public view returns (string memory) {
+    function viewTel(uint id) public view returns (string memory) {
         return per[id].phone;
     }
 
+    // show how much contact-person
     function lastId() public view returns (uint) {
         return iterate;
     }
 
-    // find == linear: O(n) - Ω(n)
-    function findByAdd(address _per) public view returns (string memory) {
+    // find ==> linear: O(n) - Ω(n)
+    function findByAddress(address _per) public view returns (string memory) {
         uint len = iterate;
         for(uint i = 0; i < len; i++){
             if(per[i].contact == _per){
@@ -86,10 +87,12 @@ contract PhoneBook {
     }
 
     // ----- logic ----- //
-    function assist(string memory txt) private pure returns (bytes32) { // in findByTel(...)
+    // string compair - use in findByTel(...)
+    function assist(string memory txt) private pure returns (bytes32) { 
         return bytes32(keccak256(abi.encodePacked(txt)));
     }
 
+    // create
     function _add(address _client, string memory _phone) private returns (uint) {
         per[iterate] = Person(_client, _phone, iterate);
         emit Create(iterate, _client, _phone, block.timestamp);
@@ -97,12 +100,14 @@ contract PhoneBook {
         return iterate;
     }
 
+    // edit
     function _modify(uint _id, address _client, string memory _phone) private {
         require(_id <= iterate, "not valid id.");
         per[_id] = Person(_client, _phone, _id);
         emit Edit(_id, _client, _phone, block.timestamp);
     }
 
+    // delete
     function _remove(uint _id) private {
         require(_id <= iterate, "not valid id.");
         per[_id] = Person(address(0), "", _id);
