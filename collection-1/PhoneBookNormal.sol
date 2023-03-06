@@ -1,13 +1,13 @@
 // SPDX-License-Identifier:MIT
 pragma solidity 0.8;
 
+error CanNotFound(string data);
+
 /// @title {CRUD action} learn in phone-book training lesson
 /// @author Mosi-Sol
 /// @notice You can use this contract for only the most basic simulation
 /// @dev All function calls are currently implemented without side effects
 /// @custom:experimental this contract just for learning purposes.
-
-error CanNotFound(string data)
 
 contract PhoneBook {
     // ----- declare state ----- //
