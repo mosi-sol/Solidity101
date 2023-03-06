@@ -6,6 +6,9 @@ pragma solidity 0.8;
 /// @notice You can use this contract for only the most basic simulation
 /// @dev All function calls are currently implemented without side effects
 /// @custom:experimental this contract just for learning purposes.
+
+error CanNotFound(string data)
+
 contract PhoneBook {
     // ----- declare state ----- //
     struct Person {
@@ -62,7 +65,7 @@ contract PhoneBook {
                 return per[i].phone;
             }
         }
-        revert("not found!");
+        revert CanNotFound("not found!");
     }
 
     function findByTel(string calldata _per) public view returns (address) {
@@ -73,7 +76,7 @@ contract PhoneBook {
                 return per[i].contact;
             }
         }
-        revert("not found!");
+        revert CanNotFound("not found!");
     }
     
     function findById(address _per) public view returns (uint) {
@@ -83,7 +86,7 @@ contract PhoneBook {
                 return per[i].id;
             }
         }
-        revert("not found!");
+        revert CanNotFound("not found!");
     }
 
     // ----- logic ----- //
