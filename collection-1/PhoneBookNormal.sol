@@ -1,5 +1,5 @@
 // SPDX-License-Identifier:MIT
-pragma solidity 0.8.19;
+pragma solidity 0.8;
 
 /// @title {CRUD action} learn in phone-book training lesson
 /// @author Mosi-Sol
