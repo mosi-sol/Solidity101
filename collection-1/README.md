@@ -11,9 +11,9 @@
 | factory edition | [here] ||
 | deploy | [here] ||
 | ui design | [here] ||
-| deploy on ipfs / github-page | [here] ||
 | connect back to front | [here] ||
 | ux | [here] ||
+| deploy on ipfs / github-page | [here] ||
 | final web3 version of phonebook | [here] ||
 
 #### using:
