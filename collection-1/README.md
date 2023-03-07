@@ -14,7 +14,7 @@
 - final web3 version of phonebook
 
 #### using:
-- search algorithms [powerd by hashing, from O(n) to O(1)]
+- search algorithms [ powerd by hashing, from O(n) to O(1) ]
 
 #
 
