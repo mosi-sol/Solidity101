@@ -2,9 +2,9 @@
 pragma solidity 0.8;
 
 interface IPhoneBook {
-    function add(address _who, string memory _phone) external returns (uint _id);
-    function modify(uint _id, address _who, string memory _phone) external;
-    function remove(uint _id) external;
+    function add(address _who, string memory _phone) external /*onlyOwner*/ returns (uint _id);
+    function modify(uint _id, address _who, string memory _phone) external /*onlyOwner*/;
+    function remove(uint _id) external /*onlyOwner*/;
     function validUser(address _valid) external /*onlyOwner*/ returns (address);
     function unvalidUser(address _valid) external /*onlyOwner*/ returns (address);
     
