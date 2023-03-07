@@ -6,7 +6,9 @@ interface IPhoneBook {
     function modify(uint _id, address _who, string memory _phone) external;
     function remove(uint _id) external;
     function validUser(address _valid) external view /*onlyOwner*/ returns (address);
+    function unvalidUser(address _valid) external view /*onlyOwner*/ returns (address);
     
+    function isValidUser(address _valid) external view returns (bool);
     function where(address _who, string memory _phone) external view returns (uint _id);
     function where(string memory _phone) external view returns (uint _id);
     function where(address _who) external view returns (uint _id);
