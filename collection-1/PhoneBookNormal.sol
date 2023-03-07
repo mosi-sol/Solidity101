@@ -25,13 +25,13 @@ contract PhoneBook {
     event Remove(uint indexed id, uint indexed date);
 
     // ----- create / edit / remove ----- //
-    function add(address _client, string memory _phone) public returns (uint) {
-        return _add(_client, _phone);
+    function add(address _who, string memory _phone) public returns (uint) {
+        return _add(_who, _phone);
     }
 
     // find by id (index), so before modify, insure about the data
-    function modify(uint _id, address _client, string memory _phone) public {
-        _modify(_id, _client, _phone);
+    function modify(uint _id, address _who, string memory _phone) public {
+        _modify(_id, _who, _phone);
     }
 
     // find by id (index), so before modify, insure about the data
@@ -96,18 +96,18 @@ contract PhoneBook {
     }
 
     // create
-    function _add(address _client, string memory _phone) private returns (uint) {
-        people[iterate] = Person(_client, _phone, iterate);
-        emit Create(iterate, _client, _phone, block.timestamp);
+    function _add(address _who, string memory _phone) private returns (uint) {
+        people[iterate] = Person(_who, _phone, iterate);
+        emit Create(iterate, _who, _phone, block.timestamp);
         iterate++;
         return iterate;
     }
 
     // edit
-    function _modify(uint _id, address _client, string memory _phone) private {
+    function _modify(uint _id, address _who, string memory _phone) private {
         require(_id <= iterate, "not valid id.");
-        people[_id] = Person(_client, _phone, _id);
-        emit Edit(_id, _client, _phone, block.timestamp);
+        people[_id] = Person(_who, _phone, _id);
+        emit Edit(_id, _who, _phone, block.timestamp);
     }
 
     // delete
