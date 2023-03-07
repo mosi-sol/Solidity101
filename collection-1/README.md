@@ -21,6 +21,7 @@
 
 #### usecase:
 - can use in platform's or project's as/is whitelist/blacklist, etc...
+just understand the code, than make usecase!
 
 #
 
