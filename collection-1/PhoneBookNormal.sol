@@ -117,3 +117,6 @@ contract PhoneBook {
         emit Remove(_id, block.timestamp);
     }
 }
+
+// Q: if have address and phone, why spend time &^ power to search?
+// Answer in next episode
