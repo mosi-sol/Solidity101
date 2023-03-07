@@ -118,5 +118,5 @@ contract PhoneBook {
     }
 }
 
-// Q: if have address and phone, why spend time &^ power to search?
-// Answer in next episode
+// Q: if have address and phone, why spend time &^ power to search? [ O(n) - Ω(n) ]
+// Answer in next episode [ O(1) - Ω(1) ]
