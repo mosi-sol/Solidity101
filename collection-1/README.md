@@ -16,4 +16,6 @@
 #### using:
 - algorithms
 
-**product from zero to hero**
+#
+
+**product web3 dApp - from zero to hero**
