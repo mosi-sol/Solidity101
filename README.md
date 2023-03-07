@@ -10,5 +10,6 @@ collection 1
 
 ---
 
-![Solidity 101](https://img.shields.io/github/license/mosi-sol/Solidity101?color=blue&label=Solidity101%20-%20License&logo=MIT&logoColor=orange&style=flat-square)
-![Solidity 101](https://img.shields.io/badge/Solidity--101-2023-blueviolet)
+<a href="https://github.com/mosi-sol/Solidity101">
+<img alt="GitHub" src="https://img.shields.io/github/license/mosi-sol/Solidity101?logoColor=orange&style=flat-square">
+</a>
