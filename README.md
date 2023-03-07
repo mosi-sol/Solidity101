@@ -3,9 +3,9 @@ Some useful solidity app, created in my class sol101. version 2023
 
 ##
 
-| collection 1 - Title | link |
+| collection - Title | link |
 | ---- | ---- |
-| Phone Book normal | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-1) |
+| PhoneBook | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-1) |
 
 ---
 
