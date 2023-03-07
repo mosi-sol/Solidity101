@@ -6,8 +6,8 @@
 | ---- | ---- | ---- |
 | develop contract | [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/01-PhoneBook_ByQuestion.sol) ||
 | update features | [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/02-PhoneBook_WithAnswer.sol) ||
-| refactor | [interface](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/IPhoneBook.sol) - [phonebook](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol) | [Demo: BSC testnet](https://testnet.bscscan.com/address/0x97de9a26690dcdc0312f04e3be263c157f6c1fb8) |
-| deploy | [here] ||
+| refactor | [interface](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/IPhoneBook.sol) - [phonebook](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol) ||
+| deploy | [Demo: BSC testnet](https://testnet.bscscan.com/address/0x97de9a26690dcdc0312f04e3be263c157f6c1fb8) ||
 | factory edition | [here] ||
 | deploy | [here] ||
 | ui design | [here] ||
