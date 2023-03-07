@@ -16,7 +16,7 @@ contract PhoneBook {
         string phone;       // his/her phone number
         uint id;            // auto generated index
     }
-    mapping(uint => Person) public per; // id --> anonymous freind
+    mapping(uint => Person) private people; // id --> anonymous freind
     uint iterate = 0;                   // auto iterate counter for indexing
 
     // ----- events ----- //
@@ -41,15 +41,15 @@ contract PhoneBook {
 
     // ----- read-only ----- //
     function viewFull(uint id) public view returns (Person memory) {
-        return per[id];
+        return people[id];
     }
 
     function viewAddress(uint id) public view returns (address) {
-        return per[id].contact;
+        return people[id].contact;
     }
 
     function viewTel(uint id) public view returns (string memory) {
-        return per[id].phone;
+        return people[id].phone;
     }
 
     // show how much contact-person
@@ -58,32 +58,32 @@ contract PhoneBook {
     }
 
     // find ==> linear: O(n) - Ω(n)
-    function findByAddress(address _per) public view returns (string memory) {
+    function findByAddress(address _person) public view returns (string memory) {
         uint len = iterate;
         for(uint i = 0; i < len; i++){
-            if(per[i].contact == _per){
-                return per[i].phone;
+            if(people[i].contact == _person){
+                return people[i].phone;
             }
         }
         revert CanNotFound("not found!");
     }
 
-    function findByTel(string calldata _per) public view returns (address) {
+    function findByTel(string calldata _person) public view returns (address) {
         uint len = iterate;
-        bytes32 compaire = assist(_per); // 1 time call to save gas
+        bytes32 compaire = assist(_person); // 1 time call to save gas
         for(uint i = 0; i < len; i++){
-            if(assist(per[i].phone) == compaire){
-                return per[i].contact;
+            if(assist(people[i].phone) == compaire){
+                return people[i].contact;
             }
         }
         revert CanNotFound("not found!");
     }
     
-    function findById(address _per) public view returns (uint) {
+    function findById(address _person) public view returns (uint) {
         uint len = iterate;
         for(uint i = 0; i < len; i++){
-            if(per[i].contact == _per){
-                return per[i].id;
+            if(people[i].contact == _person){
+                return people[i].id;
             }
         }
         revert CanNotFound("not found!");
@@ -97,7 +97,7 @@ contract PhoneBook {
 
     // create
     function _add(address _client, string memory _phone) private returns (uint) {
-        per[iterate] = Person(_client, _phone, iterate);
+        people[iterate] = Person(_client, _phone, iterate);
         emit Create(iterate, _client, _phone, block.timestamp);
         iterate++;
         return iterate;
@@ -106,14 +106,14 @@ contract PhoneBook {
     // edit
     function _modify(uint _id, address _client, string memory _phone) private {
         require(_id <= iterate, "not valid id.");
-        per[_id] = Person(_client, _phone, _id);
+        people[_id] = Person(_client, _phone, _id);
         emit Edit(_id, _client, _phone, block.timestamp);
     }
 
     // delete
     function _remove(uint _id) private {
         require(_id <= iterate, "not valid id.");
-        per[_id] = Person(address(0), "", _id);
+        people[_id] = Person(address(0), "", _id);
         emit Remove(_id, block.timestamp);
     }
 }
