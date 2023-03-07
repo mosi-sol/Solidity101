@@ -6,7 +6,7 @@
 | ---- | ---- |
 | develop contract | [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/01-PhoneBook_ByQuestion.sol) |
 | update features | [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/02-PhoneBook_WithAnswer.sol) |
-| refactor | [here] |
+| refactor | [interface](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/IPhoneBook.sol) |
 | deploy | [here] |
 | factory edition | [here] |
 | deploy | [here] |
