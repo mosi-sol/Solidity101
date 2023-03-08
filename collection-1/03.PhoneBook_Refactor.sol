@@ -15,6 +15,22 @@ error CanNotFound(string data);
 /// @custom:dev-interface   interface using for/in/on factory pattern or implment
 /// @custom:dev-hash        i don't remove old hash in modify() & remove() from peopleHashings, just like git history :)
 
+interface IPhoneBook { // interface using for factory pattern or implment
+    function add(address _who, string memory _phone) external returns (uint _id);   // onlyOwner
+    function modify(uint _id, address _who, string memory _phone) external;         // onlyOwner
+    function remove(uint _id) external;                                             // onlyOwner
+    function validUser(address _valid) external /*onlyOwner*/ returns (address);
+    function unvalidUser(address _valid) external /*onlyOwner*/ returns (address);
+    
+    function isValidUser(address _valid) external view returns (bool);    
+    function where(address _who, string memory _phone) external view returns (uint _id);
+    function where(string memory _phone) external view returns (uint _id);
+    function where(address _who) external view returns (uint _id);
+    function viewAddress(uint id) external view returns (address);
+    function viewTel(uint id) external view returns (string memory);
+    function lastId() external view returns (uint);
+}
+
 contract PhoneBook {
     // ----- declare state ----- //
     struct Person {
@@ -22,7 +38,7 @@ contract PhoneBook {
         string phone;           // his/her phone number
         uint id;                // auto generated index
     }
-    mapping(address => bool) private editor;            // editor user --> is editor
+    mapping(address => bool) internal editor;            // editor user --> is editor
     mapping(uint => Person) private people;             // id --> anonymous freind
     mapping(bytes => uint) private peopleHash;          // hash --> id of anonymous freind
     mapping(bytes => uint) private peopleHashAddress;   // hash --> check-find address
@@ -41,35 +57,48 @@ contract PhoneBook {
         _;
     }
 
+    modifier onlyValid() {
+        require(editor[msg.sender] == true, "not valid user");
+        _;
+    }
+
     // ----- init ----- //
     constructor(string memory _ownerPhone) {
         owner = msg.sender;
-        add(msg.sender, _ownerPhone);
+        init(_ownerPhone);
+    }
+
+    function init(string memory _ownerPhone) private {
+        editor[msg.sender] = true;
+        add(address(this), _ownerPhone);
     }
 
     // ----- create / edit / remove ----- //
-    function add(address _who, string memory _phone) public onlyOwner returns (uint _id) {
+    function add(address _who, string memory _phone) public onlyValid returns (uint _id) {
         _id = _add(_who, _phone);
     }
 
     // find by id (index), so before modify, insure about the data
-    function modify(uint _id, address _who, string memory _phone) public onlyOwner {
+    function modify(uint _id, address _who, string memory _phone) public onlyValid {
         _modify(_id, _who, _phone);
     }
 
     // find by id (index), so before modify, insure about the data
-    function remove(uint _id) public onlyOwner {
+    function remove(uint _id) public onlyValid {
         _remove(_id);
     }
 
-    function validUser(address _valid) public onlyOwner returns (address) {
+    // invoke user
+    function validUser(address _valid) public onlyValid returns (address) {
         require(editor[_valid] != true, "not valid user");
         editor[_valid] = true;
         return _valid;
     }
 
-    function unvalidUser(address _valid) public onlyOwner returns (address) {
+    // revoke user
+    function unvalidUser(address _valid) public onlyValid returns (address) {
         require(editor[_valid] == true, "not valid user");
+        require(_valid != msg.sender, "you are valid, can't unvalid yourself"); // can not self revoke for secure reason
         editor[_valid] = false;
         return _valid;
     }
