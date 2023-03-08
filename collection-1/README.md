@@ -17,6 +17,8 @@
 | final web3 version of phonebook | [here] | □ |
 
 #### factory:
+- factory deploy a phonebook, [here](https://testnet.bscscan.com/address/0xf78a2f557ccff5a993ecd4fc83d02e02c9493802#internaltx)
+- then we add new user number
 - check [here](https://testnet.bscscan.com/address/0xf98b3e9ea2d1574270e5ca45f1dde53dc4f884de#events)
 - where method is `0x36d6da55`
 - change last row from `hex` to `text`
