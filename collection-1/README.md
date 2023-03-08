@@ -25,9 +25,9 @@
 - - this is the last number added by using/generating from factory
 
 #### why factory?
-- less gas
-- more secure
-- change base contract if need to update/upgrade
+- Lower gas costs
+- Large quantity output (deploy) at low cost
+- Safe, fast & secure
 
 #### using:
 - search algorithms [ powerd by hashing, from O(n) to O(1) ]
