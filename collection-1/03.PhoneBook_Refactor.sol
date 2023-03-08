@@ -52,7 +52,6 @@ contract PhoneBook {
     event Edit(uint indexed id, address contact, string txt, uint indexed date);
     event Remove(uint indexed id, uint indexed date);
 
-    // ----- validators ----- //
     modifier onlyOwner() {
         require(msg.sender == owner, "not valid user");
         _;
@@ -91,7 +90,7 @@ contract PhoneBook {
 
     // invoke user
     function validUser(address _valid) public onlyValid returns (address) {
-        require(editor[_valid] != true, "not valid user");
+        require(editor[_valid] != true, "not valid address or validated user");
         editor[_valid] = true;
         return _valid;
     }
