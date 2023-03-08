@@ -17,10 +17,10 @@
 | final web3 version of phonebook | [here] | □ |
 
 #### factory:
-check [here](https://testnet.bscscan.com/address/0xf98b3e9ea2d1574270e5ca45f1dde53dc4f884de#events)
+- check [here](https://testnet.bscscan.com/address/0xf98b3e9ea2d1574270e5ca45f1dde53dc4f884de#events)
 - where method is `0x36d6da55`
 - change last row from `hex` to `text`
-- this is the last number added by using/generating from factory
+- - this is the last number added by using/generating from factory
 
 #### using:
 - search algorithms [ powerd by hashing, from O(n) to O(1) ]
