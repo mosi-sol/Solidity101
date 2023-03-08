@@ -10,7 +10,7 @@
 | deploy | [Demo: BSC testnet](https://testnet.bscscan.com/address/0x97de9a26690dcdc0312f04e3be263c157f6c1fb8) | ■ |
 | factory edition | [here] | □ |
 | deploy | [here] | □ |
-| ui design | [source](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/06.Index-ui.html) - [demo ipfs](https://gateway.pinata.cloud/ipfs/QmYyQ6WMTPrpSddhSyefwfGs6xrpD9SpXs1uNTyTboPXgF?_gl=1*1e7re46*_ga*MTE1ODgxNTI0LjE2NzgyNzUzMjI.*_ga_5RMPXG14TE*MTY3ODI3NTMyMi4xLjEuMTY3ODI3NjExMi40NC4wLjA.) | ■ |
+| ui design | [source](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/06.Index-ui.html) - [Demo: ipfs](https://gateway.pinata.cloud/ipfs/QmYyQ6WMTPrpSddhSyefwfGs6xrpD9SpXs1uNTyTboPXgF?_gl=1*1e7re46*_ga*MTE1ODgxNTI0LjE2NzgyNzUzMjI.*_ga_5RMPXG14TE*MTY3ODI3NTMyMi4xLjEuMTY3ODI3NjExMi40NC4wLjA.) | ■ |
 | connect back to front | [here] | □ |
 | ux | [here] | □ |
 | deploy on ipfs / github-page | [here] | □ |
