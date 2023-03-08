@@ -52,6 +52,7 @@ contract PhoneBook {
     event Edit(uint indexed id, address contact, string txt, uint indexed date);
     event Remove(uint indexed id, uint indexed date);
 
+    // ----- validators ----- //
     modifier onlyOwner() {
         require(msg.sender == owner, "not valid user");
         _;
