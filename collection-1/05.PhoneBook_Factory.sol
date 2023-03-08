@@ -9,21 +9,24 @@ pragma solidity 0.8;
 /// @custom:detail          deploy -> setValid editor -> PhoneBookDB is address of new phonebook
 /// @custom:why-factory     blockchain dev = less gas. factory present less gas...
 
-// import "./PhoneBookRefactore.sol";
-import "https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol"; // would same version (0.8)
+import "./PhoneBookRefactore.sol";
+// import "https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol"; // would same version (0.8)
 
 contract PhoneBookFactory {
     // db of different phone book's
     PhoneBook[] public PhoneBookDB;
+    uint id = 0;
 
     // generate new phonebook
     function CreateNewPhoneBook(string memory _phoneNumber) public {
         PhoneBook phoneBook = new PhoneBook(_phoneNumber);
         PhoneBookDB.push(phoneBook);
+        setValid(id);
+        id += 1;
     }
 
-    // who can edit which phone book
-    function setValid(uint256 _phoneBookIndex) public {
+    // who can edit which phone book (deployer is the valid owner for edit)
+    function setValid(uint256 _phoneBookIndex) private {
         PhoneBook(address(PhoneBookDB[_phoneBookIndex])).validUser(msg.sender); // not view, write
     }
 
