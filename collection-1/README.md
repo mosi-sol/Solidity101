@@ -24,6 +24,11 @@
 - change last row from `hex` to `text`
 - - this is the last number added by using/generating from factory
 
+#### why factory?
+- less gas
+- more secure
+- change base contract if need to update/upgrade
+
 #### using:
 - search algorithms [ powerd by hashing, from O(n) to O(1) ]
 
