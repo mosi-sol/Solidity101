@@ -4,15 +4,15 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 
 | Backend (smart contract) | Frontend (web3) |
 | ---- | ---- |
-| write smart contract (prototype) | |
-| test | |
+| write smart contract (prototype) | --- |
+| test | --- |
 | refactor | ui |
-| pattern (factory / proxy) | |
-| test | |
-| refactor | |
+| pattern (factory / proxy) | --- |
+| test | --- |
+| refactor | --- |
 | deploy | connect to backend |
-| | ux |
-| | deploy (ipfs / host) |
+| --- | ux |
+| --- | deploy (ipfs / host) |
 
 ##
 
