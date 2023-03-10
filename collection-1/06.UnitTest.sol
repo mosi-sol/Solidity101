@@ -15,6 +15,7 @@ contract PhoneBookFactory {
 
     // generate new phonebook
     function CreateNewPhoneBook(string memory _phoneNumber) public {
+        assert(id < type(uint256).max);                                 // error getter ***
         uint tmp = id;                                                  // tmp (error setter)
         PhoneBook phoneBook = new PhoneBook(_phoneNumber);
         PhoneBookDB.push(phoneBook);
