@@ -31,7 +31,7 @@ contract PhoneBookFactory {
 
     // who can edit which phone book (deployer is the valid owner for edit)
     function setValid(uint256 _phoneBookIndex) private {
-        // no need to check error, cuz: automate incress id value (overflow check auyomated on ver >0.8 )
+        // no need to check error, cuz: automate incress id value (overflow check automated on ver >0.8 )
         PhoneBook(address(PhoneBookDB[_phoneBookIndex])).validUser(msg.sender); // not view, write
     }
 
