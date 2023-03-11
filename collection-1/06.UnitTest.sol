@@ -4,9 +4,10 @@ pragma solidity 0.8;
 error dataShadow(bytes data);
 
 /// @title                  internal unit test
+/// @dev                    deploy: PhoneBookFactory contract -> copy address of that -> deploy CheckUnit contract
 
-// import "./PhoneBookRefactore.sol";
-import "https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol"; // would same version (0.8)
+import "./PhoneBookRefactore.sol";
+// import "https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol"; // would same version (0.8)
 
 contract PhoneBookFactory {
     // db of different phone book's
@@ -32,7 +33,7 @@ contract PhoneBookFactory {
 
     // who can edit which phone book (deployer is the valid owner for edit)
     function setValid(uint256 _phoneBookIndex) private {
-        // no need to check error, cuz: automate incress id value (overflow check automated on ver >0.8 )
+        // no need to check error, cuz: automate incress id value (overflow check auyomated on ver >0.8 )
         PhoneBook(address(PhoneBookDB[_phoneBookIndex])).validUser(msg.sender); // not view, write
     }
 
@@ -55,44 +56,109 @@ contract PhoneBookFactory {
     }
 }
 
+// ===== test unit =====
 contract CheckUnit {
     uint id = 0;
+    uint testPass = 0;
     PhoneBookFactory t;
+    address _target;
 
-    error why(address x, string y, uint z, uint q);
+    error why(address x, uint z, uint q);
     event TestPass(string message);
 
-    // assert not show you where what happend
-    function error_drop(address _target, string memory _phone) public {
+    constructor(address target) {
+        _target = target;
+    }
+
+    function testUnit_1(string memory _phone) external {
+        // generate next phonebook
+        require(first_run_me( _phone), "first pass: congrats, generate succesfully!");
+    }
+
+    function testUnit_2() external {
+        
+        if(second_error_check()) {
+            emit TestPass("second test: pass");
+        } else {
+            emit TestPass("second test: fail");
+        }
+    }
+
+    function testUnit_3() external {
+        
+        if(third_error_drop()) {
+            emit TestPass("third test: pass");
+        } else {
+            emit TestPass("third test: fail");
+        }
+    }
+
+    function testUnit_4() external {
+
+        if(fourth_error_handle_debugging()) {
+            emit TestPass("fourth test: pass");
+        } else {
+            emit TestPass("fourth test: fail");
+        }
+    }
+
+    // ===== logic ===== //
+    // 1
+    function first_run_me(string memory _phone) internal returns (bool pass) {
+        uint tmp = testPass;
+        t = PhoneBookFactory(_target);       // deploy the PhoneBookFactory, pass the address here
+        t.CreateNewPhoneBook(_phone);        // example "+1-987-654-3210"
+        id += 1;
+        testPass += 1; 
+        tmp < testPass ? pass = true : pass = false;
+        emit TestPass("Congrat, Test passed!");
+    }
+
+    // 2
+    function second_error_check() internal returns (bool pass) {
+        uint tmp = testPass;
         t = PhoneBookFactory(_target);      // deploy the PhoneBookFactory, pass the address here
-        t.CreateNewPhoneBook(_phone);       // example "+1-987-654-3210"
+        
+        require(t.isValidEditor(id - 1) == true, "Congrat, Test passed!");
+
+        testPass += 1; 
+        tmp < testPass ? pass = true : pass = false;
+    }
+
+    // 3
+    function third_error_drop() internal returns (bool pass) {
+        uint tmp = testPass;
+        t = PhoneBookFactory(_target);      // deploy the PhoneBookFactory, pass the address here
         
         assert(t.addressOwnerFactory(id) == msg.sender);    // false - pass
         assert(t.addressOwnerFactory(id) == address(this)); // false - pass
         assert(t.addressOwnerFactory(id) == address(0));    // false - pass
         assert(t.addressOwnerFactory(id) == _target);       // true - error
 
-        id += 1; // never reach code :(
+        testPass += 1; // never reach code :(
+        tmp < testPass ? pass = true : pass = false;
+        emit TestPass("Congrat, Test passed!");
     }
 
-    // show you directly where what happend!
-    function error_handle_debugging(address _target, string memory _phone) public {
+    // 4
+    function fourth_error_handle_debugging() internal returns (bool pass) {
+        uint tmp = testPass;
         t = PhoneBookFactory(_target);      // deploy the PhoneBookFactory, pass the address here
-        t.CreateNewPhoneBook(_phone);       // example "+1-987-654-3210"
 
         if(t.addressOwnerFactory(id) == msg.sender) {           // false - pass
-            revert why(_target, _phone, id, 101);
+            revert why(_target, id, 101);
         } else if(t.addressOwnerFactory(id) == address(this)) { // false - pass
-            revert why(_target, _phone, id, 202);
+            revert why(_target, id, 202);
         } else if(t.addressOwnerFactory(id) == _target) {       // true - error
-            revert why(_target, _phone, id, 303);
+            revert why(_target, id, 303);
         } else if(t.addressOwnerFactory(id) == address(0)) {    // false - pass
-            revert why(_target, _phone, id, 404);
+            revert why(_target, id, 404);
         } else {
             emit TestPass("Congrat, Test passed!");
         }
 
-        id += 1;
+        testPass += 1;
+        tmp < testPass ? pass = true : pass = false;
     }
 
 }
