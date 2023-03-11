@@ -5,6 +5,7 @@ error dataShadow(bytes data);
 
 /// @title                  internal unit test
 /// @dev                    deploy: PhoneBookFactory contract -> copy address of that -> deploy CheckUnit contract
+/// @info                   test1 = create new -> true . test2 = check valid user . test3 = always false . test4 = always false
 
 // import "./PhoneBookRefactore.sol";
 import "https://github.com/mosi-sol/Solidity101/blob/main/collection-1/03.PhoneBook_Refactor.sol"; // would same version (0.8)
