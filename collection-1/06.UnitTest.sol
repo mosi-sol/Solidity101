@@ -176,5 +176,5 @@ function sendMoney(address _to, uint256 _amount) public payable {
     }
 }
 
-// more infi: https://solstep.gitbook.io/solidity-steps/step-5/43-try-and-catch
+// more info: https://solstep.gitbook.io/solidity-steps/step-5/43-try-and-catch
 */
