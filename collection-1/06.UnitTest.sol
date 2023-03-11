@@ -54,3 +54,45 @@ contract PhoneBookFactory {
         return PhoneBook(address(PhoneBookDB[_phoneBookIndex])).isValidUser(msg.sender); // read
     }
 }
+
+contract CheckUnit {
+    uint id = 0;
+    PhoneBookFactory t;
+
+    error why(address x, string y, uint z, uint q);
+    event TestPass(string message);
+
+    // assert not show you where what happend
+    function error_drop(address _target, string memory _phone) public {
+        t = PhoneBookFactory(_target);      // deploy the PhoneBookFactory, pass the address here
+        t.CreateNewPhoneBook(_phone);       // example "+1-987-654-3210"
+        
+        assert(t.addressOwnerFactory(id) == msg.sender);    // false - pass
+        assert(t.addressOwnerFactory(id) == address(this)); // false - pass
+        assert(t.addressOwnerFactory(id) == address(0));    // false - pass
+        assert(t.addressOwnerFactory(id) == _target);       // true - error
+
+        id += 1; // never reach code :(
+    }
+
+    // show you directly where what happend!
+    function error_handle_debugging(address _target, string memory _phone) public {
+        t = PhoneBookFactory(_target);      // deploy the PhoneBookFactory, pass the address here
+        t.CreateNewPhoneBook(_phone);       // example "+1-987-654-3210"
+
+        if(t.addressOwnerFactory(id) == msg.sender) {           // false - pass
+            revert why(_target, _phone, id, 101);
+        } else if(t.addressOwnerFactory(id) == address(this)) { // false - pass
+            revert why(_target, _phone, id, 202);
+        } else if(t.addressOwnerFactory(id) == _target) {       // true - error
+            revert why(_target, _phone, id, 303);
+        } else if(t.addressOwnerFactory(id) == address(0)) {    // false - pass
+            revert why(_target, _phone, id, 404);
+        } else {
+            emit TestPass("Congrat, Test passed!");
+        }
+
+        id += 1;
+    }
+
+}
