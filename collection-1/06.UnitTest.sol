@@ -163,3 +163,18 @@ contract CheckUnit {
     }
 
 }
+
+/*
+// exception example using try/catch:
+function sendMoney(address _to, uint256 _amount) public payable {    
+    try {        
+        require(_amount <= 5 ether);        
+        _to.transfer(_amount);    
+    } 
+    catch (bytes32 err) {        
+        revert("Only 5 ether can be sent at a time");    
+    }
+}
+
+// more infi: https://solstep.gitbook.io/solidity-steps/step-5/43-try-and-catch
+*/
