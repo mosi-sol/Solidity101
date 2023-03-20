@@ -1,6 +1,6 @@
 ::wsl
 @echo off
-title Forge-unit test %DATE%
+title Forge-unit test %DATE% %TIME% 
 
 CALL :more
 pause
