@@ -11,12 +11,12 @@
 | factory edition | [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/05.PhoneBook_Factory.sol) | □ |
 | deploy | [Demo: BSC testnet](https://testnet.bscscan.com/address/0xf78a2f557ccff5a993ecd4fc83d02e02c9493802) | ■ |
 | unit test | [Example internal test](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/06.UnitTest.sol) - [Foundry external test](https://github.com/mosi-sol/Solidity101/tree/main/collection-1/Foundry%20Test) | □ |
-| ui design | [source](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/06.Index-ui.html) - [Demo: ipfs](https://gateway.pinata.cloud/ipfs/QmYyQ6WMTPrpSddhSyefwfGs6xrpD9SpXs1uNTyTboPXgF?_gl=1*1e7re46*_ga*MTE1ODgxNTI0LjE2NzgyNzUzMjI.*_ga_5RMPXG14TE*MTY3ODI3NTMyMi4xLjEuMTY3ODI3NjExMi40NC4wLjA.) | ■ |
+| ui design | [source](https://github.com/mosi-sol/Solidity101/blob/main/collection-1/06.Index-ui.html) - [Demo: ipfs](---) | □ |
 | connect back to front | [here] | □ |
 | ux | [here] | □ |
 | deploy on ipfs / github-page | [here] | □ |
 | final web3 version of phonebook | [here] | □ |
-
+<!-- https://gateway.pinata.cloud/ipfs/QmYyQ6WMTPrpSddhSyefwfGs6xrpD9SpXs1uNTyTboPXgF?_gl=1*1e7re46*_ga*MTE1ODgxNTI0LjE2NzgyNzUzMjI.*_ga_5RMPXG14TE*MTY3ODI3NTMyMi4xLjEuMTY3ODI3NjExMi40NC4wLjA. -->
 #### factory:
 - factory deploy a phonebook, [here](https://testnet.bscscan.com/address/0xf78a2f557ccff5a993ecd4fc83d02e02c9493802#internaltx)
 - then we add new user number
