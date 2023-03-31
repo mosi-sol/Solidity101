@@ -22,7 +22,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | collection - Title | link |
 | ---- | ---- |
 | PhoneBook | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-1) |
-
+| Vault | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-2) |
 ---
 
 <a href="https://github.com/mosi-sol/Solidity101">
