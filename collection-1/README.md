@@ -1,4 +1,5 @@
 # PhoneBook
+Final project on my live class. (monthly 2 times)
 
 #### road map:
 
