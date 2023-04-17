@@ -77,3 +77,6 @@ contract Example {
         x == true ? console.log("test pass") : console.log("test fail");
     }
 }
+
+// for more information, read this article at ethereum website:
+// https://ethereum.org/en/developers/docs/smart-contracts/testing/
