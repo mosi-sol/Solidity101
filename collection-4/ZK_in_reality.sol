@@ -3,7 +3,7 @@ pragma solidity 0.8;
 
 // zk-Sign proof
 // we are no need the mapping by "address", this is just example.
-// for ZK product need just "bytes32", anonymously tx.
+// for ZK product need just "bytes32", anonymously tx. (not anonymous address, anonymous who can do it)
 
 contract SignMain {
     bytes4 immutable private TrustSign; // read constructor comment
