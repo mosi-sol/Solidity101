@@ -38,7 +38,7 @@ contract SignMain {
         uint8 _salt = 255;
     	return uint8(uint256(
     		keccak256(abi.encodePacked(block.prevrandao, msg.sender))
-    		)) % _salt; // salt mut to be = 0 to 255 
+    		)) % _salt; // salt must to be = 0 to 255 
     }
 
     // ---------------------------
