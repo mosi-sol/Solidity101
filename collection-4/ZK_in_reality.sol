@@ -67,6 +67,7 @@ contract Test {
         t = SignMain(_SignMain);
     }
 
+    // example usecase: claim, mint, proof of identity, security reason or security solution
     function test() public view returns (bool) {        
         return t.export(msg.sender);
     }
