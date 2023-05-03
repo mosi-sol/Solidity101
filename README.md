@@ -24,6 +24,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | PhoneBook | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-1) |
 | Vault | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-2) |
 | Own Test Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-3) |
+| ZK in reality | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-4) |
 
 ---
 
