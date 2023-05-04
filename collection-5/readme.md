@@ -289,3 +289,117 @@ using `bootstrap` for ui and `ethersjs` for web3 operations
 </body>
 </html>
 ```
+
+### mobile app
+react native 0.64.2
+
+```js
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { ethers } from 'ethers';
+
+const contractAddress = 'CONTRACT_ADDRESS';     // replace with contract address
+const contractABI = [];                         // replace with contract ABI
+const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
+const signer = provider.getSigner();
+const contract = new ethers.Contract(contractAddress, contractABI, provider);
+
+export default function App() {
+  const [price, setPrice] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [description, setDescription] = useState('');
+  const [status, setStatus] = useState('');
+
+  const handleBook = async () => {
+    try {
+      const transaction = await contract.connect(signer).book(price, startDate, endDate, description);
+      await transaction.wait();
+      setStatus('Booking successful!');
+    } catch (error) {
+      console.error(error);
+      setStatus('Booking failed. Please try again.');
+    }
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Booking</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Price"
+        value={price}
+        onChangeText={setPrice}
+        keyboardType="numeric"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Start Date"
+        value={startDate}
+        onChangeText={setStartDate}
+        keyboardType="numeric"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="End Date"
+        value={endDate}
+        onChangeText={setEndDate}
+        keyboardType="numeric"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Description"
+        value={description}
+        onChangeText={setDescription}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleBook}>
+        <Text style={styles.buttonText}>Book</Text>
+      </TouchableOpacity>
+      <Text style={styles.status}>{status}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#222',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 20,
+  },
+  input: {
+    width: '80%',
+    height: 40,
+    backgroundColor: '#333',
+    borderRadius: 5,
+    color: '#fff',
+    paddingHorizontal: 10,
+    marginBottom: 10,
+  },
+  button: {
+    width: '80%',
+    height: 40,
+    backgroundColor: '#007bff',
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  status: {
+    color: '#fff',
+    marginTop: 20,
+  },
+});
+```
+
+> mobile app made by @creature , he is my student. this is just for teaching purposes, don't use in your product.
