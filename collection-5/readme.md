@@ -5,20 +5,20 @@ Booking[dot]com is an online travel agency that allows users to search for and b
 
 Search for accommodations: Users can search for accommodations by entering their destination, travel dates, and the number of guests. They can also specify preferences such as the type of accommodation, price range, and amenities.
 
-Browse results: Booking.com will then display a list of available accommodations that match the user's search criteria. Users can browse through the results and view photos, read descriptions, and check availability.
+Browse results: Booking[dot]com will then display a list of available accommodations that match the user's search criteria. Users can browse through the results and view photos, read descriptions, and check availability.
 
-Book accommodations: Once the user has found an accommodation they like, they can book it by entering their personal and payment details. Booking.com will then confirm the reservation and send a confirmation email to the user.
+Book accommodations: Once the user has found an accommodation they like, they can book it by entering their personal and payment details. Booking[dot]com will then confirm the reservation and send a confirmation email to the user.
 
-Manage reservations: Users can manage their reservations through their Booking.com account. They can view their bookings, make changes to their reservation, and cancel their booking if necessary.
+Manage reservations: Users can manage their reservations through their Booking[dot]com account. They can view their bookings, make changes to their reservation, and cancel their booking if necessary.
 
-Customer service: If users have any questions or need assistance with their booking, Booking.com provides customer service through their website, mobile app, or phone.
+Customer service: If users have any questions or need assistance with their booking, Booking[dot]com provides customer service through their website, mobile app, or phone.
 
-Payment: Booking.com acts as an intermediary between the user and the accommodation provider, and collects payment from the user on behalf of the provider. The provider then receives payment from Booking.com after the stay is completed.
+Payment: Booking[dot]com acts as an intermediary between the user and the accommodation provider, and collects payment from the user on behalf of the provider. The provider then receives payment from Booking[dot]com after the stay is completed.
 
-Overall, Booking.com provides a convenient and user-friendly platform for travelers to search for and book accommodations and other travel-related services, while also providing customer support and managing payments.
+Overall, Booking[dot]com provides a convenient and user-friendly platform for travelers to search for and book accommodations and other travel-related services, while also providing customer support and managing payments.
 
 ### blockchain/web3
-There are several parts of the Booking.com process that could potentially be implemented on a blockchain as a smart contract. Here are a few examples:
+There are several parts of the Booking[dot]com process that could potentially be implemented on a blockchain as a smart contract. Here are a few examples:
 
 Booking: The booking process could be implemented as a smart contract on a blockchain. This would allow users to book accommodations directly on the blockchain, with the terms of the booking (e.g. dates, price, cancellation policy) enforced by the smart contract.
 
@@ -26,9 +26,9 @@ Payment: The payment process could also be implemented as a smart contract on a 
 
 Reviews: The review system could be implemented on a blockchain as a smart contract. This would ensure that reviews are genuine, as they would be recorded on the blockchain and could not be manipulated or deleted.
 
-Loyalty program: Booking.com's loyalty program could also be implemented on a blockchain as a smart contract. This would allow users to earn and redeem loyalty points directly on the blockchain, with the smart contract automatically managing the points and rewards.
+Loyalty program: Booking[dot]com's loyalty program could also be implemented on a blockchain as a smart contract. This would allow users to earn and redeem loyalty points directly on the blockchain, with the smart contract automatically managing the points and rewards.
 
-Overall, implementing parts of the Booking.com process on a blockchain as smart contracts could increase transparency, security, and efficiency by removing intermediaries and automating processes. However, it's important to note that implementing such a system would require significant technical expertise and resources.
+Overall, implementing parts of the Booking[dot]com process on a blockchain as smart contracts could increase transparency, security, and efficiency by removing intermediaries and automating processes. However, it's important to note that implementing such a system would require significant technical expertise and resources.
 
 ### smartcontract
 Sure, I can provide an example of how smart contracts could be implemented using Solidity, a programming language specifically designed for creating smart contracts on the Ethereum blockchain. Here are some examples:
