@@ -199,3 +199,93 @@ contract Booking {
 #
 
 > Attention: this is for teaching purposes, don't use in product.
+
+---
+
+### web3 ui
+using `bootstrap` for ui and `ethersjs` for web3 operations
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+    }
+    .card {
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Booking</h5>
+            <form id="bookingForm">
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price">
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate" name="startDate">
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" class="form-control" id="endDate" name="endDate">
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js" crossorigin="anonymous"></script>
+  <script>
+    const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
+    const contractAddress = 'CONTRACT_ADDRESS'; // replace with your contract address
+    const contractABI = []; // replace with your contract ABI
+
+    const contract = new ethers.Contract(contractAddress, contractABI, provider);
+
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const price = formData.get('price');
+      const startDate = formData.get('startDate');
+      const endDate = formData.get('endDate');
+      const description = formData.get('description');
+      const signer = provider.getSigner();
+      const transaction = await contract.connect(signer).book(price, startDate, endDate, description);
+      await transaction.wait();
+      alert('Booking successful!');
+    });
+  </script>
+</body>
+</html>
+```
