@@ -1,7 +1,7 @@
 ## Booking web3
 
 ### explain
-Booking.com is an online travel agency that allows users to search for and book accommodations, flights, rental cars, and other travel-related services. Here's how it works:
+Booking[dot]com is an online travel agency that allows users to search for and book accommodations, flights, rental cars, and other travel-related services. Here's how it works:
 
 Search for accommodations: Users can search for accommodations by entering their destination, travel dates, and the number of guests. They can also specify preferences such as the type of accommodation, price range, and amenities.
 
