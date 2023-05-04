@@ -31,9 +31,8 @@ Loyalty program: Booking[dot]com's loyalty program could also be implemented on 
 Overall, implementing parts of the Booking[dot]com process on a blockchain as smart contracts could increase transparency, security, and efficiency by removing intermediaries and automating processes. However, it's important to note that implementing such a system would require significant technical expertise and resources.
 
 ### smartcontract
-Sure, I can provide an example of how smart contracts could be implemented using Solidity, a programming language specifically designed for creating smart contracts on the Ethereum blockchain. Here are some examples:
 
-1. Booking: Here's an example of how a booking smart contract could be implemented in Solidity:
+1. **Booking**: Here's an example of how a booking smart contract could be implemented in Solidity:
 
 ```solidity
 contract Booking {
@@ -55,7 +54,7 @@ contract Booking {
 
 This contract stores the owner of the accommodation, the price, start and end dates of the booking, and a description of the accommodation. When a user wants to book the accommodation, they would call the `book()` function and provide the necessary parameters. The function checks that the user calling it is the owner of the accommodation, and then sets the values of price, start date, end date, and description.
 
-2. Payment: Here's an example of how a payment smart contract could be implemented in Solidity:
+2. **Payment**: Here's an example of how a payment smart contract could be implemented in Solidity:
 
 ```solidity
 contract Payment {
@@ -75,7 +74,7 @@ contract Payment {
 
 This contract stores the buyer, seller, amount, and payment status. When the buyer wants to make a payment, they would call the `pay()` function and provide the necessary parameters. The function checks that the user calling it is the buyer, and that the payment amount matches the agreed amount. It then sends the payment to the seller and sets the payment status to `true`.
 
-3. Reviews: Here's an example of how a review smart contract could be implemented in Solidity:
+3. **Reviews**: Here's an example of how a review smart contract could be implemented in Solidity:
 
 ```solidity
 contract Review {
@@ -101,7 +100,7 @@ contract Review {
 
 This contract stores the reviewer, comment, rating, and approval status. When a user wants to write a review, they would call the `writeReview()` function and provide the necessary parameters. The function checks that the rating is between 1 and 5, and then sets the values of reviewer, comment, rating, and approval status. Only the owner of the accommodation can approve a review, which they would do by calling the `approveReview()` function.
 
-4. Loyalty program: Here's an example of how a loyalty program smart contract could be implemented in Solidity:
+4. **Loyalty program**: Here's an example of how a loyalty program smart contract could be implemented in Solidity:
 
 ```solidity
 contract LoyaltyProgram {
@@ -124,7 +123,7 @@ contract LoyaltyProgram {
 This contract stores the user and their loyalty points. When a user wants to add points to their account, they would call the `addPoints()` function and provide the necessary parameters. The function sets the value of user and adds the given number of points to their account. When a user wants to redeem points, they would call the `redeemPoints()` function and provide the necessary parameters. The function checks that the user has enough points, subtracts the redeemed points from their account, and then implements the redemption logic (e.g. issuing a reward).
 
 ### final barebone version
-prototype release
+***prototype release***
 
 ```solidity
 contract Booking {
@@ -193,4 +192,4 @@ contract Booking {
 }
 ```
 
-> Attention: this is for teaching purposes, dont use in product
+> Attention: this is for teaching purposes, don't use in product.
