@@ -267,8 +267,8 @@ using `bootstrap` for ui and `ethersjs` for web3 operations
   <script src="https://cdn.ethers.io/lib/ethers-5.4.umd.min.js" crossorigin="anonymous"></script>
   <script>
     const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545');
-    const contractAddress = 'CONTRACT_ADDRESS'; // replace with your contract address
-    const contractABI = []; // replace with your contract ABI
+    const contractAddress = 'CONTRACT_ADDRESS';     // replace with contract address
+    const contractABI = [];                         // replace with contract ABI
 
     const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
