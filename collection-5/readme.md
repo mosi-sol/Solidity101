@@ -30,6 +30,8 @@ Loyalty program: Booking[dot]com's loyalty program could also be implemented on 
 
 Overall, implementing parts of the Booking[dot]com process on a blockchain as smart contracts could increase transparency, security, and efficiency by removing intermediaries and automating processes. However, it's important to note that implementing such a system would require significant technical expertise and resources.
 
+---
+
 ### smartcontract
 
 1. **Booking**: Here's an example of how a booking smart contract could be implemented in Solidity:
@@ -122,6 +124,8 @@ contract LoyaltyProgram {
 
 This contract stores the user and their loyalty points. When a user wants to add points to their account, they would call the `addPoints()` function and provide the necessary parameters. The function sets the value of user and adds the given number of points to their account. When a user wants to redeem points, they would call the `redeemPoints()` function and provide the necessary parameters. The function checks that the user has enough points, subtracts the redeemed points from their account, and then implements the redemption logic (e.g. issuing a reward).
 
+---
+
 ### final barebone version
 ***prototype release***
 
@@ -191,5 +195,7 @@ contract Booking {
   }
 }
 ```
+
+#
 
 > Attention: this is for teaching purposes, don't use in product.
