@@ -1,8 +1,8 @@
-Refactoring design patterns in Solidity:
+### Refactoring design patterns in Solidity:
 
 > Disclaimer: these codes not tested, just for example. so don't use in product, just learn the concept.
 
-1. Extracting Functions:
+#### 1. Extracting Functions:
 
 Consider the following contract that contains a function for transferring tokens:
 
@@ -40,7 +40,7 @@ By doing this, we have made the code more modular and easier to understand.
 
 #
 
-2. Extracting Contracts:
+#### 2. Extracting Contracts:
 
 Consider the following contract that contains logic for buying and selling tokens:
 
@@ -102,7 +102,7 @@ By doing this, we have separated the concerns of buying and selling tokens into 
 
 #
 
-3. Template Method:
+#### 3. Template Method:
 
 Consider the following contract that contains a function for transferring tokens, which can be overridden by subclasses:
 
@@ -163,7 +163,7 @@ while allowing subclasses to override certain steps of the algorithm (_transfer 
 
 #
 
-4. State Pattern:
+#### 4. State Pattern:
 
 Consider the following contract that contains logic for a voting system:
 
@@ -270,7 +270,7 @@ which can be swapped out at runtime. This can help to simplify complex logic and
 
 #
 
-5. Strategy Pattern:
+#### 5. Strategy Pattern:
 
 Consider the following contract that contains logic for calculating the interest rate on a loan:
 
@@ -346,7 +346,7 @@ This can help to reduce code duplication and make it easier to update the algori
 
 #
 
-6. Replace Magic Numbers with Constants:
+#### 6. Replace Magic Numbers with Constants:
 
 Consider the following contract that contains a function for setting a token price in Ether:
 
@@ -381,7 +381,7 @@ By doing this, we have improved the readability of the code and made it easier t
 
 #
 
-7. Remove Duplicate Code:
+#### 7. Remove Duplicate Code:
 
 Consider the following contract that contains two functions for checking if an address is whitelisted:
 
@@ -449,7 +449,7 @@ By doing this, we have removed the duplicate code and made the code easier to ma
 
 #
 
-8. Replace Loops with Mapping:
+#### 8. Replace Loops with Mapping:
 
 Consider the following contract that contains a function for calculating the sum of an array:
 
@@ -491,7 +491,7 @@ By doing this, we have replaced the loop with a mapping, which can improve the p
 
 #
 
-9. Use Structs for Complex Data:
+#### 9. Use Structs for Complex Data:
 
 Consider the following contract that contains a function for storing information about a user:
 
@@ -531,7 +531,7 @@ By doing this, we have simplified the code and made it easier to read and mainta
 
 #
 
-10. Use Events for Logging:
+#### 10. Use Events for Logging:
 
 Consider the following contract that contains a function for transferring tokens:
 
@@ -573,7 +573,7 @@ By doing this, we've added an event to log the transfer of tokens, which can be 
 
 #
 
-11. Use Enumerations for State:
+#### 11. Use Enumerations for State:
 
 Consider the following contract that contains a function for setting the status of a user:
 
@@ -607,7 +607,7 @@ By doing this, we've simplified the code and made it easier to maintain.
 
 #
 
-12. Use Library Functions:
+#### 12. Use Library Functions:
 
 Consider the following contract that contains a function for calculating the square of a number:
 
@@ -641,7 +641,7 @@ By doing this, we've moved the `square` function to a library and made it reusab
 
 #
 
-13. Use Inheritance for Code Reuse:
+#### 13. Use Inheritance for Code Reuse:
 
 Consider the following contract that contains a function for setting the owner of a contract:
 
