@@ -531,4 +531,179 @@ By doing this, we have simplified the code and made it easier to read and mainta
 
 #
 
+10. Use Events for Logging:
+
+Consider the following contract that contains a function for transferring tokens:
+
+```solidity
+contract MyToken {
+    mapping(address => uint256) public balanceOf;
+
+    function transfer(address to, uint256 amount) public {
+        require(amount > 0, "Amount must be greater than zero");
+        require(balanceOf[msg.sender] >= amount, "Not enough balance");
+
+        balanceOf[msg.sender] -= amount;
+        balanceOf[to] += amount;
+    }
+}
+```
+
+This code can be refactored by using events to log the transfer:
+
+```solidity
+contract MyToken {
+    mapping(address => uint256) public balanceOf;
+
+    event Transfer(address indexed from, address indexed to, uint256 amount);
+
+    function transfer(address to, uint256 amount) public {
+        require(amount > 0, "Amount must be greater than zero");
+        require(balanceOf[msg.sender] >= amount, "Not enough balance");
+
+        balanceOf[msg.sender] -= amount;
+        balanceOf[to] += amount;
+
+        emit Transfer(msg.sender, to, amount);
+    }
+}
+```
+
+By doing this, we've added an event to log the transfer of tokens, which can be helpful for debugging and monitoring the contract.
+
+#
+
+11. Use Enumerations for State:
+
+Consider the following contract that contains a function for setting the status of a user:
+
+```solidity
+contract User {
+    mapping(address => bool) public isAdmin;
+    mapping(address => bool) public isBanned;
+
+    function setStatus(address user, bool admin, bool banned) public {
+        isAdmin[user] = admin;
+        isBanned[user] = banned;
+    }
+}
+```
+
+This code can be refactored by using an enumeration to represent the status of a user:
+
+```solidity
+contract User {
+    enum Status { Normal, Admin, Banned }
+
+    mapping(address => Status) public status;
+
+    function setStatus(address user, Status _status) public {
+        status[user] = _status;
+    }
+}
+```
+
+By doing this, we've simplified the code and made it easier to maintain.
+
+#
+
+12. Use Library Functions:
+
+Consider the following contract that contains a function for calculating the square of a number:
+
+```solidity
+contract Calculator {
+    function square(uint256 x) public pure returns (uint256) {
+        return x * x;
+    }
+}
+```
+
+This code can be refactored by using a library function to calculate the square:
+
+```solidity
+library Math {
+    function square(uint256 x) internal pure returns (uint256) {
+        return x * x;
+    }
+}
+
+contract Calculator {
+    using Math for uint256;
+
+    function square(uint256 x) public pure returns (uint256) {
+        return x.square();
+    }
+}
+```
+
+By doing this, we've moved the `square` function to a library and made it reusable across multiple contracts.
+
+#
+
+13. Use Inheritance for Code Reuse:
+
+Consider the following contract that contains a function for setting the owner of a contract:
+
+```solidity
+contract Ownable {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not authorized");
+        _;
+    }
+
+    function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != address(0), "Invalid address");
+        owner = newOwner;
+    }
+}
+
+contract MyToken is Ownable {
+    // ...
+}
+```
+
+This code can be refactored by using inheritance to reuse the `onlyOwner` modifier and `transferOwnership` function:
+
+```solidity
+contract Ownable {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not authorized");
+        _;
+    }
+
+    function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != address(0), "Invalid address");
+        owner = newOwner;
+    }
+}
+
+contract TransferableOwnership is Ownable {
+    function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != address(0), "Invalid address");
+        owner = newOwner;
+    }
+}
+
+contract MyToken is TransferableOwnership {
+    // ...
+}
+```
+
+By doing this, we've used inheritance to reuse the `onlyOwner` modifier and `transferOwnership` function, making it easier to maintain and update the code.
+
+#
+
 > Refactoring is so important for feature code, review, audit, clean code, etc.
