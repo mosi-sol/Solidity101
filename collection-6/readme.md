@@ -1,4 +1,4 @@
-There is some refactoring design patterns can use in solidity:
+#### There is some refactoring design patterns can use in solidity:
 - Extract Functions to Improve Modularity
 - Split Large Functions into Smaller Ones
 - Use Descriptive Names for Variables and Functions
@@ -17,7 +17,7 @@ More info [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-6/
 
 #
 
-Some information here:
+#### Some information here:
 
 1. Extract Functions to Improve Modularity:\
 Extracting functions from a larger function can make the code more modular and easier to understand. Modular code is easier to test and maintain, as each function can be tested and updated independently.
