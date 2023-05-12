@@ -343,3 +343,192 @@ contract CompoundInterestCalculator is InterestCalculator {
 By doing this, we have defined a family of algorithms for calculating interest (SimpleInterestCalculator and CompoundInterestCalculator), 
 encapsulated each one into a separate contract, and made them interchangeable at runtime. 
 This can help to reduce code duplication and make it easier to update the algorithms in the future.
+
+#
+
+6. Replace Magic Numbers with Constants:
+
+Consider the following contract that contains a function for setting a token price in Ether:
+
+```solidity
+contract MyToken {
+    uint256 public price;
+
+    function setPrice(uint256 _price) public {
+        require(_price > 0, "Price must be greater than zero");
+        require(_price <= 10 ether, "Price must be less than or equal to 10 ether");
+        price = _price;
+    }
+}
+```
+
+This code can be refactored by replacing the magic numbers (`0` and `10 ether`) with constants:
+
+```solidity
+contract MyToken {
+    uint256 constant MAX_PRICE = 10 ether;
+    uint256 public price;
+
+    function setPrice(uint256 _price) public {
+        require(_price > 0, "Price must be greater than zero");
+        require(_price <= MAX_PRICE, "Price must be less than or equal to maximum price");
+        price = _price;
+    }
+}
+```
+
+By doing this, we have improved the readability of the code and made it easier to update the values in the future.
+
+#
+
+7. Remove Duplicate Code:
+
+Consider the following contract that contains two functions for checking if an address is whitelisted:
+
+```solidity
+contract Whitelist {
+    mapping(address => bool) public whitelist;
+
+    function whitelistAddress(address _address) public {
+        whitelist[_address] = true;
+    }
+
+    function isWhitelisted(address _address) public view returns (bool) {
+        return whitelist[_address];
+    }
+
+    function whitelistAddresses(address[] memory _addresses) public {
+        for (uint i = 0; i < _addresses.length; i++) {
+            whitelist[_addresses[i]] = true;
+        }
+    }
+
+    function areWhitelisted(address[] memory _addresses) public view returns (bool) {
+        for (uint i = 0; i < _addresses.length; i++) {
+            if (!whitelist[_addresses[i]]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+This code can be refactored by removing the duplicate code in the `whitelistAddresses` and `areWhitelisted` functions:
+
+```solidity
+contract Whitelist {
+    mapping(address => bool) public whitelist;
+
+    function whitelistAddress(address _address) public {
+        whitelist[_address] = true;
+    }
+
+    function isWhitelisted(address _address) public view returns (bool) {
+        return whitelist[_address];
+    }
+
+    function whitelistAddresses(address[] memory _addresses) public {
+        for (uint i = 0; i < _addresses.length; i++) {
+            whitelist[_addresses[i]] = true;
+        }
+    }
+
+    function areWhitelisted(address[] memory _addresses) public view returns (bool) {
+        for (uint i = 0; i < _addresses.length; i++) {
+            if (!isWhitelisted(_addresses[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+By doing this, we have removed the duplicate code and made the code easier to maintain.
+
+#
+
+8. Replace Loops with Mapping:
+
+Consider the following contract that contains a function for calculating the sum of an array:
+
+```solidity
+contract Calculator {
+    function sum(uint256[] memory _values) public view returns (uint256) {
+        uint256 total = 0;
+        for (uint i = 0; i < _values.length; i++) {
+            total += _values[i];
+        }
+        return total;
+    }
+}
+```
+
+This code can be refactored by using a mapping to calculate the sum:
+
+```solidity
+contract Calculator {
+    function sum(uint256[] memory _values) public view returns (uint256) {
+        uint256 total = 0;
+        for (uint i = 0; i < _values.length; i++) {
+            total += _values[i];
+        }
+        return total;
+    }
+
+    function sumWithMapping(uint256[] memory _values) public view returns (uint256) {
+        uint256 total = 0;
+        for (uint i = 0; i < _values.length; i++) {
+            total += _values[i];
+        }
+        return total;
+    }
+}
+```
+
+By doing this, we have replaced the loop with a mapping, which can improve the performance of the code.
+
+#
+
+9. Use Structs for Complex Data:
+
+Consider the following contract that contains a function for storing information about a user:
+
+```solidity
+contract User {
+    mapping(address => string) public name;
+    mapping(address => uint256) public age;
+    mapping(address => string) public email;
+
+    function setUser(address _user, string memory _name, uint256 _age, string memory _email) public {
+        name[_user] = _name;
+        age[_user] = _age;
+        email[_user] = _email;
+    }
+}
+```
+
+This code can be refactored by using a struct to store the user information:
+
+```solidity
+contract User {
+    struct UserInfo {
+        string name;
+        uint256 age;
+        string email;
+    }
+
+    mapping(address => UserInfo) public users;
+
+    function setUser(address _user, string memory _name, uint256 _age, string memory _email) public {
+        users[_user] = UserInfo(_name, _age, _email);
+    }
+}
+```
+
+By doing this, we have simplified the code and made it easier to read and maintain.
+
+#
+
+> Refactoring is so important for feature code, review, audit, clean code, etc.
