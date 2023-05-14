@@ -25,7 +25,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | Vault | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-2) |
 | Own Test Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-3) |
 | ZK in reality | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-4) |
-| Booking in web3 | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-5) |
+| Booking.com - Airbnb | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-5) |
 | Refactoring | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-6) | 
 
 ---
