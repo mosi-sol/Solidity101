@@ -1,1 +1,22 @@
+### List of 20 "solidity vulnerability":
 
+- Reentrancy
+- Integer overflow/underflow
+- Access control issues
+- Logic errors
+- Denial of Service (DoS)
+- Insufficient gas-guzzling
+- Deprecated functions
+- Outdated dependencies
+- Improper error handling
+- Time manipulation
+- Front-running attacks
+- Unchecked return values
+- Short address attacks
+- Cross-function race conditions
+- Uninitialized storage pointers
+- Delegatecall to untrusted contracts
+- DoS with block gas limit
+- Unvalidated inputs
+- Malicious libraries
+- Integer division rounding errors
