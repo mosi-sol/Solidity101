@@ -1,5 +1,5 @@
 ### List of 20 "solidity vulnerability":
-
+> By details [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-7/Solidity_Vulnerability.md)
 - Reentrancy
 - Integer overflow/underflow
 - Access control issues
