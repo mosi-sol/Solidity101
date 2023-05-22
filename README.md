@@ -27,6 +27,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | ZK in reality | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-4) |
 | Booking.com - Airbnb - Uber | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-5) |
 | Refactoring | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-6) | 
+| Bytes Convertor | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-8) |
 
 ---
 
