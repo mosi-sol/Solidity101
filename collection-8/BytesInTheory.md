@@ -88,7 +88,7 @@ function bytes32ToHexString(bytes32 bytes32Data) private pure returns (bytes mem
 
 - Helper function to convert a uint8 value to a hexadecimal digit
 ```solidity
-function toHexDigit(uint8 value) private pure returns (bytes1) {
+function toHexDigit(uint8 value) private pure returns (bytes1) { // bytesN type
     if (value < 10) {
         return bytes1(uint8(bytes1("0")) + value);
     } else {
