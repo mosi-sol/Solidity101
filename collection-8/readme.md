@@ -1,7 +1,7 @@
 ## Bytes in Theory
 how to convert bytes data type to other bytes type.
 
-- full details: [here]()
+- full details: [here](https://github.com/mosi-sol/Solidity101/blob/main/collection-8/BytesInTheory.md)
 - basic example:
 ```solidity
 function bytes16toBytes(bytes16 input, bytes memory output, uint offset) internal pure {
