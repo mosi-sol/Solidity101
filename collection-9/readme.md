@@ -23,7 +23,7 @@ Enjoy it, have fun.
 
 ## factory contract that can be used to create instances of the `Blackjack` contract:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8;
 
@@ -51,7 +51,7 @@ This `BlackjackFactory` contract has two main functions:
 You can deploy the `BlackjackFactory` contract to the blockchain and then call its `createGame()` function to create new instances of the `Blackjack` contract.\
 For example to best imagination, you can use the following code snippet in Remix to deploy the `BlackjackFactory` contract and create a new game:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8;
 
