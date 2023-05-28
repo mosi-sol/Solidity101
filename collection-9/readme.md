@@ -49,7 +49,7 @@ This `BlackjackFactory` contract has two main functions:
 - The `getDeployedGames()` function returns an array of all the addresses of the `Blackjack` contracts that have been created through the factory.
 
 You can deploy the `BlackjackFactory` contract to the blockchain and then call its `createGame()` function to create new instances of the `Blackjack` contract.\
-For example to best imagination, you can use the following code snippet in Remix to deploy the `BlackjackFactory` contract and create a new game:
+For example to best imagination and marketing results, you can use the following code snippet in Remix to deploy the `BlackjackFactory` contract and create a new game:
 
 ```solidity
 // SPDX-License-Identifier: MIT
