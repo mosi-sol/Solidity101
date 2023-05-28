@@ -18,3 +18,60 @@
   - 🛑 I played, but i'm not proffessional players. So run this by your own risk.
 
 Enjoy it, have fun.
+
+---
+
+## factory contract that can be used to create instances of the `Blackjack` contract:
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8;
+
+import "./Blackjack.sol";
+
+contract BlackjackFactory {
+    address[] public deployedGames;
+    
+    function createGame() public {
+        address newGame = address(new Blackjack());
+        deployedGames.push(newGame);
+    }
+    
+    function getDeployedGames() public view returns (address[] memory) {
+        return deployedGames;
+    }
+}
+```
+
+This `BlackjackFactory` contract has two main functions:
+
+- The `createGame()` function creates a new instance of the `Blackjack` contract and adds its address to the `deployedGames` array.
+- The `getDeployedGames()` function returns an array of all the addresses of the `Blackjack` contracts that have been created through the factory.
+
+You can deploy the `BlackjackFactory` contract to the blockchain and then call its `createGame()` function to create new instances of the `Blackjack` contract.\
+For example to best imagination, you can use the following code snippet in Remix to deploy the `BlackjackFactory` contract and create a new game:
+
+```
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8;
+
+import "./BlackjackFactory.sol";
+
+contract InstanceBlackjack {
+    BlackjackFactory public factory;
+    
+    constructor() {
+        factory = new BlackjackFactory();
+    }
+    
+    function createGame() public {
+        factory.createGame();
+    }
+    
+    function getDeployedGames() public view returns (address[] memory) {
+        return factory.getDeployedGames();
+    }
+}
+```
+
+After deploying the `InstanceBlackjack` contract in Remix, you can call its `createGame()` function to create a new `Blackjack` game instance through the `BlackjackFactory`, and then call its `getDeployedGames()` function to get an array of all the game addresses that have been created.
