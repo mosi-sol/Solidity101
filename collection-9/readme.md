@@ -13,8 +13,8 @@
 
 #
 
-• 🛑 Implementation is not fully secure and may be vulnerable to various attacks, such as frontrunning and reentrancy attacks. 
-• 🛑 Proper security measures should be taken before deploying this contract to a production environment.
-• 🛑 I played, but i'm not proffessional players. So run this by your own risk.
+  - 🛑 Implementation is not fully secure and may be vulnerable to various attacks, such as frontrunning and reentrancy attacks. 
+  - 🛑 Proper security measures should be taken before deploying this contract to a production environment.
+  - 🛑 I played, but i'm not proffessional players. So run this by your own risk.
 
 Enjoy it, have fun.
