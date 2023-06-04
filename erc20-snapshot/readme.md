@@ -8,3 +8,5 @@ Two versions of tracking token (snapshot token)
 - for create a different type of dlt
 
 > @Disclaimer: this is just template, use in product by your own risk.
+
+- ver 2 need to edit...
