@@ -6,3 +6,5 @@ Two versions of tracking token (snapshot token)
 - in regulation purposes
 - in the games
 - for create a different type of dlt
+
+> @Disclaimer: this is just template, use in product by your own risk.
