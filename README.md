@@ -15,7 +15,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | 08 | Bytes Convertor | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-8) |
 | 09 | Blackjack | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-9) |
 | 10 | ERC20 SnapShot | [here](https://github.com/mosi-sol/Solidity101/tree/main/erc20-snapshot) |
-| 11 | Trello Board Simulate | [here](https://github.com/mosi-sol/Solidity101/tree/main/Trellodity) |
+| 11 | Trello Board Simulation | [here](https://github.com/mosi-sol/Solidity101/tree/main/Trellodity) |
 
 #
 
