@@ -1,6 +1,6 @@
 Error library for Solidity:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8;
@@ -18,7 +18,7 @@ To use this error library in the Solidity code, can import the library and then 
 
 - Example of use:
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 
 pragma solidity 0.8;
