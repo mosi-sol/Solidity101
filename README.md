@@ -16,7 +16,8 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | 09 | Blackjack | [here](https://github.com/mosi-sol/Solidity101/tree/main/collection-9) |
 | 10 | ERC20 SnapShot | [here](https://github.com/mosi-sol/Solidity101/tree/main/erc20-snapshot) |
 | 11 | Trello Board Simulation | [here](https://github.com/mosi-sol/Solidity101/tree/main/Trellodity) |
-| 12 | Testing Lib | [here](https://github.com/mosi-sol/Solidity101/tree/main/Testing-Library) |
+| 12 | Testing Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/Testing-Library) |
+| 13 | Error Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/Error-Library) |
 
 #
 
