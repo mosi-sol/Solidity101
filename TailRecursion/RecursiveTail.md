@@ -1,6 +1,6 @@
 ## How to use "tail recursion" to perform multiple NFT transfers in Solidity
 
-The tail recursion ensures that the function operates as a loop, avoiding potential stack overflow issues that could occur with traditional recursion.
+The **tail recursion** ensures that the function operates as a loop, avoiding potential *stack overflow issues* that could occur with traditional recursion.
 
 ```solidity
 pragma solidity 0.8;
