@@ -18,6 +18,7 @@ Some useful solidity app + web3 dapp, created in my class sol101. version 2023
 | 11 | Trello Board Simulation | [here](https://github.com/mosi-sol/Solidity101/tree/main/Trellodity) |
 | 12 | Testing Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/Testing-Library) |
 | 13 | Error Library | [here](https://github.com/mosi-sol/Solidity101/tree/main/Error-Library) |
+| 14 | Recursion Tail | [here](https://github.com/mosi-sol/Solidity101/tree/main/TailRecursion) |
 
 #
 
