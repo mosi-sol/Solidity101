@@ -44,6 +44,7 @@ library TestPass {
     }
 
     function _asFuzzy(uint256 a) private view returns(bool ans, uint256 pair) {
+        require(a > 1, "divided by zero injection");
         pair = uint256(keccak256(abi.encodePacked(a, block.prevrandao))) % (a - 1);
         a != pair ? ans = true : ans = false;
     }
