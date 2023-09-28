@@ -45,7 +45,7 @@ contract SignMain {
     function claim() public {
         txSign();
         require(txSeries[msg.sender] != bytes32(0), "you`re signed/claimed");
-        require(txSeriesTrue[txSeries[msg.sender]] == msg.sender, "you're claimed");
+        require(txSeriesTrue[txSeries[msg.sender]] == msg.sender, "you`re claimed");
         txSeriesTrue[txSeries[msg.sender]] = address(0);
         // do somthing, like minting, or build anonymously recognition address
         // emit Claim(msg.sender, txSeries[msg.sender], txSeriesTrue[txSeries[msg.sender]]);
