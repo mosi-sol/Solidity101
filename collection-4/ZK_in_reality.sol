@@ -21,7 +21,7 @@ contract SignMain {
 
     // ---------------------------
     function txSign() private returns (bytes32) {
-        require(txSeries[msg.sender] == bytes32(0), "you're signed||claimed");
+        require(txSeries[msg.sender] == bytes32(0), "you`re signed||claimed");
         bytes32 tmp = bytes32(keccak256(abi.encode(TrustSign, msg.sender, txNonce())));
         txSeries[msg.sender] = tmp;
         txSeriesTrue[tmp] = msg.sender;
@@ -44,7 +44,7 @@ contract SignMain {
     // ---------------------------
     function claim() public {
         txSign();
-        require(txSeries[msg.sender] != bytes32(0), "you're signed/claimed");
+        require(txSeries[msg.sender] != bytes32(0), "you`re signed/claimed");
         require(txSeriesTrue[txSeries[msg.sender]] == msg.sender, "you're claimed");
         txSeriesTrue[txSeries[msg.sender]] = address(0);
         // do somthing, like minting, or "build anonymously recognition address"
